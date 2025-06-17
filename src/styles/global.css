@@ -1,0 +1,51 @@
+/*
+  The following @tailwind directives require Tailwind CSS to be processed via PostCSS.
+  Make sure your build tool (e.g., Next.js, Vite, Webpack) is configured to use Tailwind CSS.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --whiteish: #F1EFEC; /* your whiteish */
+  --cream: #D4C9BE;    /* your cream */
+  --blue: #123458;     /* your dark blue */
+  --black: #030303;    /* your black */
+
+  /* Optional: font variable if you want */
+  --font-roboto-slab: 'Roboto Slab', serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  background-color: var(--whiteish);
+  color: var(--black);
+  font-family: var(--font-roboto-slab);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Kill the floating 'N' dev button */
+.nextjs-portal,
+#nextjs__container,
+#__next-route-announcer {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+  position: absolute !important;
+}
